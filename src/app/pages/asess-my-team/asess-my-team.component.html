@@ -1,0 +1,26 @@
+<h3>Assess My Team's Potential</h3>
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>PF</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.PF}}</td>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.Department }}</td>
+            <td>
+                <button (click)="toggleCard()">View</button>
+                <div class="card" *ngIf="showCard">
+                    <app-view-team></app-view-team>
+                </div>
+                <button (click)="toggleCard()">assess</button>
+                <div class="card" *ngIf="showCard"></div>
+            </td>
+        </tr>
+    </tbody>
+</table>
